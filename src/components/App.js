@@ -1,19 +1,19 @@
 import React from 'react'
+import { BrowserRouter as Router, Route} from 'react-router-dom'
 import 'normalize.css/normalize.css'
 import '../styles/App.css'
 import { Provider } from 'react-redux'
 import store from '../store'
-
-import Button from './Button'
-import Greeting from './Greeting'
+import ShopMain from './ShopMain'
 
 export default props => {
   return (
+    <Router>
     <Provider store={store}>
       <div>
-        <Button />
-        <Greeting />
+        <Route path="/" component={ShopMain}></Route>
       </div>
     </Provider>
+    </Router>
   )
 }
